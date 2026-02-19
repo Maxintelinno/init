@@ -17,6 +17,9 @@ func main() {
 
 	// Routes
 	e.GET("/", hello)
+	e.GET("/health", func(c echo.Context) error {
+		return c.String(http.StatusOK, "OK")
+	})
 
 	// Start server
 	e.Logger.Fatal(e.Start(":1323"))
