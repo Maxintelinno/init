@@ -25,7 +25,7 @@ func main() {
 	// 👇 สำคัญมาก
 	port := os.Getenv("PORT")
 	if port == "" {
-		port = "8080"
+		panic("PORT not set")
 	}
 
 	e.Logger.Fatal(e.Start("0.0.0.0:" + port))
