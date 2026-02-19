@@ -18,6 +18,9 @@ func main() {
 	e.GET("/health", func(c echo.Context) error {
 		return c.String(http.StatusOK, "OK")
 	})
+	e.GET("/*", func(c echo.Context) error {
+		return c.String(http.StatusOK, "API Running")
+	})
 
 	// 👇 สำคัญมาก
 	port := os.Getenv("PORT")
