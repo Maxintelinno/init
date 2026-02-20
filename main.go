@@ -11,13 +11,17 @@ import (
 	_ "github.com/lib/pq"
 )
 
+const (
+	DATABASE_URL = "postgresql://postgres:NeXBZmkJncJFJPWGzfAVoWeTIAKyFeQu@postgres.railway.internal:5432/railway"
+)
+
 func main() {
 	e := echo.New()
 	e.Use(middleware.Logger())
 	e.Use(middleware.Recover())
 
 	// 🔥 Connect DB
-	dbURL := os.Getenv("postgresql://postgres:NeXBZmkJncJFJPWGzfAVoWeTIAKyFeQu@postgres.railway.internal:5432/railway")
+	dbURL := os.Getenv(DATABASE_URL)
 	if dbURL == "" {
 		log.Fatal("DATABASE_URL not set")
 	}
