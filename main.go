@@ -2,6 +2,7 @@ package main
 
 import (
 	"database/sql"
+	"fmt"
 	"log"
 	"net/http"
 	"os"
@@ -46,6 +47,7 @@ func main() {
 	log.Println("PORT =", os.Getenv("PORT"))
 
 	port := os.Getenv("PORT")
+	fmt.Println("PORT FROM ENV:", port)
 	if port == "" {
 		port = "8080" // fallback เฉพาะตอน local
 	}
