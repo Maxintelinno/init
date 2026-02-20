@@ -16,6 +16,8 @@ func main() {
 	e.Use(middleware.Logger())
 	e.Use(middleware.Recover())
 
+	log.Println("ENV CHECK:", os.Getenv("DATABASE_URL"))
+
 	// 🔥 Connect DB
 	dbURL := os.Getenv("DATABASE_URL")
 	if dbURL == "" {
