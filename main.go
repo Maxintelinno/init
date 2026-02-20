@@ -45,8 +45,7 @@ func main() {
 
 	port := os.Getenv("PORT")
 	if port == "" {
-		panic("PORT not set")
+		port = "8080" // fallback สำหรับ local
 	}
-
 	e.Logger.Fatal(e.Start("0.0.0.0:" + port))
 }
