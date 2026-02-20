@@ -43,9 +43,12 @@ func main() {
 		return c.String(http.StatusOK, "OK")
 	})
 
+	log.Println("PORT =", os.Getenv("PORT"))
+
 	port := os.Getenv("PORT")
 	if port == "" {
-		port = "8080" // fallback สำหรับ local
+		port = "8080" // fallback เฉพาะตอน local
 	}
-	e.Logger.Fatal(e.Start("0.0.0.0:" + port))
+
+	e.Logger.Fatal(e.Start(":" + port))
 }
