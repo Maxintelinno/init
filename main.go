@@ -17,7 +17,7 @@ func main() {
 	e.Use(middleware.Recover())
 
 	// 🔥 Connect DB
-	dbURL := os.Getenv("DATABASE_URL")
+	dbURL := os.Getenv("postgresql://postgres:NeXBZmkJncJFJPWGzfAVoWeTIAKyFeQu@postgres.railway.internal:5432/railway")
 	if dbURL == "" {
 		log.Fatal("DATABASE_URL not set")
 	}
