@@ -44,6 +44,7 @@ func main() {
 		return c.String(http.StatusOK, "OK")
 	})
 
+	log.Printf("All ENV: %+v\n", os.Environ())
 	log.Println("PORT =", os.Getenv("PORT"))
 
 	port := os.Getenv("PORT")
